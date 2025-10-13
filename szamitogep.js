@@ -1,22 +1,36 @@
 export class Szamitogep {
-    constructor(memoria = 0, allapot = false) {
-        this._memoria = memoria
-        this._allapot = allapot
+
+    constructor(memoria = 1024, allapot = false)   {
+        this._memoria = memoria;
+        this._allapot = allapot;
     }
-    kapcsol() {
-        this._allapot = !this._allapot
+
+    kapcsol(){
+        this._allapot = !this._allapot;
+        return this._allapot;
     }
-    
-    get memoria() {
-        return this._memoria
+
+    programMasol(szam){
+        if (szam <= this._memoria){
+            this._memoria = this._memoria - szam;
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-    set memoria(_memoria) {
-        this._memoria = _memoria
+
+    get memoria(){
+        return this._memoria;
     }
-    get allapot() {
-        return this._allapot
+    set memoria(_memoria){
+        this._memoria = _memoria;
     }
-    set allapot(_allapot) {
-        this._allapot = _allapot
+    get allapot(){
+        return this._allapot;
     }
+    set allapot(_allapot){
+        this._allapot = _allapot;
+    }
+
 }
