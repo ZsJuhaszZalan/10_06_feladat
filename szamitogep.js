@@ -4,22 +4,18 @@ export class Szamitogep {
         this._memoria = memoria;
         this._allapot = allapot;
     }
-
     kapcsol(){
         this._allapot = !this._allapot;
         return this._allapot;
     }
-
     programMasol(szam){
         if (szam <= this._memoria){
             this._memoria = this._memoria - szam;
             return true;
         }
-        else{
-            return false;
-        }
+        else return false;
+        
     }
-
     get memoria(){
         return this._memoria;
     }
